@@ -1,106 +1,120 @@
-<html lang="en-us"><head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Slope Game</title>
+<html lang="en"><head><title>Play Slope Game Game Online !</title><meta charset="utf-8"><meta name="robots" content="noindex, nofollow, noodp, noydir"><meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no, minimal-ui"><meta http-equiv="X-UA-Compatible" content="requiresActiveX=true,IE=Edge,chrome=1"><meta http-equiv="Content-Language" content="en-US"><style>* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
+		}
 
-    
-    <meta property="og:image" content="slope.png">
+		html,
+		body {
+			background-color: rgba(0, 0, 0, 0.4);
+		}</style></head><body id="run_IFRAME_HTML"><style>.before-playing {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: #16181e;
+			}
 
-    <link rel="shortcut icon" href="TemplateData/icon16.png">
-    <link rel="stylesheet" href="TemplateData/style.css">
+			.blur-background {
+				background-image: url('/data/image/game/slope-game.png');
+				background-repeat: no-repeat;
+				position: absolute;
+				background-size: cover;
+				background-position: 50%;
+				filter: blur(12px);
+				opacity: .7;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+			}
 
-    <style>
-	  #unity-canvas {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 100%;
-      height: 100%;
-    }
-      body{
-        background: url("bg.jpg");
-      }
-      a:-webkit-any-link {
-          color: -webkit-link;
-          cursor: pointer;
-          text-decoration: underline;
-      }
-      a{
-        cursor: pointer;
-      }
-      h1 {
-    position: absolute;
-    text-align: center;
-    z-index: 1;
-    background: #fff;
-    width: 100%;
-    top: 0;
-    margin: 0;
-}
-    </style>
-<meta name="robots" content="noindex,nofollow">
-<script id="id-jssdk" src="sdk.js"></script><script type="text/javascript" src="/cloak.js"></script>
-  </head>
-  <body>
+			.preload-before-playing {
+				padding: 20px 30px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+				flex-direction: column;
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+				max-width: 800px;
+				margin: 0 auto;
+			}
 
-   
-    <canvas id="unity-canvas" width="1233" height="869" style="cursor: default;"></canvas>
-      <div id="unity-loading-bar" style="display: none;">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full" style="width: 100%;"></div>
-        </div>
-      </div>
-    <script>
-		const maxPixelRatioMobile = 2.0;
-		const maxPixelRatioDesktop = 1.5;
+			.image-thumbnail-playing img {
+				box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+				
+				border-radius: 16px;
+			}
 
-		var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-		var maxDevicePixelRatio = isMobile? maxPixelRatioMobile: maxPixelRatioDesktop;
-		var pixelRatio = Math.min(window.devicePixelRatio, maxDevicePixelRatio);
-		console.log(pixelRatio);
-		var buildUrl = "Build";
-		var loaderUrl = buildUrl + "/2020.3.23f1.loader.js";
-		var config = {
-			dataUrl: buildUrl + "/SlopeBuild.data",
-			frameworkUrl: buildUrl + "/SlopeBuild.framework.js",
-			codeUrl: buildUrl + "/SlopeBuild.wasm",
-			streamingAssetsUrl: "StreamingAssets",
-			companyName: "Y8",
-			productName: "Slope",
-			productVersion: "1.2",
-			//devicePixelRatio: pixelRatio,
-			//matchWebGLToCanvasSize: true
-		};
-		
-		var container = document.querySelector("#unity-container");
-		var canvas = document.querySelector("#unity-canvas");
-		var loadingBar = document.querySelector("#unity-loading-bar");
-		var progressBarFull = document.querySelector("#unity-progress-bar-full");
-		
-		console.log(screen.width);
-		canvas.style.width = screen.width;
-        canvas.style.height = screen.height;
-		loadingBar.style.display = "block";
-		var myGameInstance = null;
-		var script = document.createElement("script");
-		script.src = loaderUrl;
-		script.onload = () => {
-			createUnityInstance(canvas, config, (progress) => {
-			  progressBarFull.style.width = 100 * progress + "%";
-			}).then((unityInstance) => {
-			  myGameInstance = unityInstance;
-			  loadingBar.style.display = "none";
-			  /*fullscreenButton.onclick = () => {
-				unityInstance.SetFullscreen(1);
-			  };*/
-			}).catch((message) => {
-			  alert(message);
-			});
-		};
-		document.body.appendChild(script);
-    </script><script src="Build/2020.3.23f1.loader.js"></script>
-    <script type="text/javascript" src="js/gameBreakBeta.js"></script>
-  
+			.title-game-playing span {
+				min-width: 160px;
+				border-radius: 40px;
+				text-transform: uppercase;
+				padding: 20px 40px;
+				margin-top: 20px;
+				cursor: pointer;
+				color: #000;
+				animation: crunch 600ms infinite ease;
+				text-align: center;
+				display: block;
+				font-size: 20px;
+				font-weight: bold;
+				font-family: system-ui;
+				letter-spacing: 1px;
+				border: 1px solid rgba(0, 0, 0, 0.1);
+				box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.21);
+				background-color: #00ff4cd4;
+				display: flex;
+				align-items: center;
+				gap: 3px;
+			}
 
-<script src="Build/SlopeBuild.framework.js"></script><div id="id-root" class="id-reset"></div><iframe name="easyXDM_id_xd_api_provider" id="easyXDM_id_xd_api_provider" src="https://slopegamefree.github.io/slope/null.html?https://cdn.y8.com/Xd/xd_handler.html?version=42&amp;xdm_e=https%3A%2F%2Fslopegamefree.github.io%2Fslope%2F&amp;xdm_c=id_xd_api&amp;xdm_p=4" frameborder="0" style="position: absolute; top: -2000px; left: 0px;"></iframe></body></html>
+			.title-game-playing span:hover {
+				background-color: #01fd04;
+			}
+
+			@keyframes crunch {
+				0% {
+					transform: rotate(-2deg) scale(0.98);
+				}
+
+				50% {
+					transform: rotate(2deg) scale(1.02);
+				}
+
+				100% {
+					transform: rotate(-2deg) scale(1);
+				}
+			}</style><script>async function start_game_frame() {
+				//let frame_game = '<iframe id="iframehtml5" width="100%" height="100%" src="https://slopegamefree.github.io/slope/" frameborder="0" border="0" scrolling="no" class="iframe-default" allowfullscreen></iframe>';
+				let frame_game = document.createElement('iframe');
+				frame_game.setAttribute('id', 'iframehtml5');
+				frame_game.setAttribute('width', '100%');
+				frame_game.setAttribute('height', '100%');
+				frame_game.setAttribute('frameborder', '0');
+				frame_game.setAttribute('border', '0');
+				frame_game.setAttribute('scrolling', 'no');
+				frame_game.setAttribute('class', 'iframe-default');
+				frame_game.setAttribute('allowfullscreen', 'true');
+				frame_game.setAttribute('src', 'https://slopegamefree.github.io/slope/');
+				if (document.getElementById("preloading-game")) {
+					await document.getElementById("preloading-game").remove();
+				}
+				document.body.append(frame_game);
+				frame_game.focus();
+				fetch("/count.ajax?id=1")
+				// frame_game.onload = () => {
+				 // window.addEventListener("keyup", frame_game.contentWindow.onGameKeyUp);
+				 // window.addEventListener("keydown", frame_game.contentWindow.onGameKeyDown);
+				// };
+			}</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;19f8262109f54b979bc8be5da9bfe872&quot;,&quot;r&quot;:1}" crossorigin="anonymous"></script>
+<iframe id="iframehtml5" width="100%" height="100%" frameborder="0" border="0" scrolling="no" class="iframe-default" allowfullscreen="true" src="https://slopegamefree.github.io/slope/"></iframe>
+</body></html>
