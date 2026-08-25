@@ -415,17 +415,6 @@
         }
       }, 1000);
     }
-
-    // Initial ad show
-    setTimeout(showAd, showDelay);
-
-    // Close with animation and schedule reappearance
-    closeBtn.addEventListener('click', () => {
-      if (closeBtn.disabled) return;
-      adContainer.classList.add('hidden');
-      adContainer.setAttribute('aria-hidden', 'true');
-      // Schedule reappearance without removing or reloading iframe
-      setTimeout(showAd, reappearDelay);
     });
   })();
 </script>
